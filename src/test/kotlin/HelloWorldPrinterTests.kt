@@ -1,3 +1,5 @@
+package uk.co.tombryant.ynab.poller
+
 import org.junit.Test
 
 class HelloWorldPrinterTests {
@@ -9,5 +11,10 @@ class HelloWorldPrinterTests {
     @Test
     fun `should say hello to someone`() {
         assert(HelloWorldPrinter().hello("Bob") == "Hello Bob")
+    }
+
+    @Test
+    fun `should fail`() {
+        assert(false)
     }
 }
