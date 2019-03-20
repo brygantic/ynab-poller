@@ -6,7 +6,7 @@ deploy:
   region: eu-west-2
   role: 'arn:aws:iam::053105132499:role/service-role/ynabPollerRole'
   runtime: java8
-  zip: "build/libs/ynab-poller-1.0-SNAPSHOT.jar"
+  zip: "build/libs/ynab-poller-fat-jar-1.0-SNAPSHOT.jar"
   publish: "true"
   module_name: 'uk.co.tombryant.ynab.poller'
   handler_name: 'Handler::handleRequest'

@@ -39,10 +39,9 @@ task fatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'uk.co.tombryant.ynab.poller.Handler'
     }
-    baseName = 'ynab-poller'
+    baseName = 'ynab-poller-fat-jar'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
 
-build.dependsOn fatJar
 assemble.dependsOn fatJar
