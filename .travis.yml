@@ -4,7 +4,7 @@ deploy:
   provider: lambda
   function_name: ynabPoller
   region: eu-west-2
-  role: 'arn:aws:iam::053105132499:role/lambda_basic_execution '
+  role: 'arn:aws:iam::053105132499:role/lambda_basic_execution'
   runtime: java8
   handler_name: uk.co.tombryant.ynab.poller.Handler::handleRequest
   access_key_id:
