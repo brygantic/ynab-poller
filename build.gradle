@@ -45,5 +45,4 @@ task fatJar(type: Jar) {
 }
 
 build.dependsOn fatJar
-
-
+assemble.dependsOn fatJar
