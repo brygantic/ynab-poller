@@ -35,21 +35,15 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
-task buildZip(type: Zip) {
-    from compileJava
-    from processResources
-    into('lib') {
-        from configurations.compileClasspath
-    }
-}
-
-build.dependsOn buildZip
-
 task fatJar(type: Jar) {
     manifest {
         attributes 'Main-Class': 'uk.co.tombryant.ynab.poller.Handler'
     }
-    baseName = 'fat-jar'
+    baseName = 'ynab-poller'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
     with jar
 }
+
+build.dependsOn fatJar
+
+

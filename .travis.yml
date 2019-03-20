@@ -6,7 +6,7 @@ deploy:
   region: eu-west-2
   role: 'arn:aws:iam::053105132499:role/service-role/ynabPollerRole'
   runtime: java8
-  handler_name: uk.co.tombryant.ynab.poller.Handler::handleRequest
+  handler_name: 'uk.co.tombryant.ynab.poller.Handler::handleRequest'
   access_key_id:
     secure: "bbZrh6FVUiQrqHENE1H9NOu1l5l+EBavGvnQdwC3C8rArxJdHk22oC7Uzfrb0Q36CJnbuh4PMpB/d3ft1FcgtSvPwGEXkddadzFBeH2xMw7qYE0ucvO4j+qzGYXIQWaxlv31nPwB9va3PCcdrCEiOhZZmhEhysoMCqCaIG+Zf5TiOB1d7K0ANrAJNdBl7AhRpfUSrdr9e8thP5NP7bdI/0dQFkAORmgBNoYsQXVT/nJ7MJdJ0XGYolfMm6bYbhKE/HKURroefwcIbt7/9Jvhsd4c9HtJuvnwP5kIF0jeufTnv+gO7UGSMxwZFNdeBwlcM9FDnp51DFvY0ZAdxKpNhwuMateDwMtthgkV1ookz2yTy449TPlCAdcHp4XheZyvjJBu9LPJgMND5mn1bLjl0jHmrHT3/iAIOfj/XpZ6MPP20D3xrJXozLHWFuKmeZ3m/9dI0GLjdINaEnwoGRY7DVdC/MbXgARWfiQ6qQj+itheUrFMy+jwEEVq4I1B7xUjY2j5uifb40kJcIU5BaOHxscbQhypHmz91rIxZP/wJlqs38fThXyEKy6HVjlYl33h0oLcDSsxKs1lRl7VXfPrrjz2VOXz48BwSeOHvbXoSsd05esUCjg/2yZGG7fl8WTiIG8pUUfEU7piCf80fs6kjqu5HRv3qb2QDrrKyXa6WXk="
   secret_access_key:
