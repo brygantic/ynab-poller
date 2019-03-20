@@ -42,12 +42,12 @@ class WiredHandler(
 
         val message = "You have made $numTransactions transactions in the last two weeks, $moneyMessage."
 
-        sendMessage(
+        val sentMessage = sendMessage(
             configProvider.recipientPhoneNumber,
             configProvider.senderPhoneNumber,
             message
         )
-        return input.toString()
+        return sentMessage.toString()
     }
 
     private fun sendMessage(to: String, from: String, message: String): Message {
