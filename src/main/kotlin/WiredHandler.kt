@@ -21,7 +21,7 @@ class WiredHandler(
 
     override fun handleRequest(input: Any, context: Context?): String {
         val today = LocalDate.now()
-        val oneWeekAgo = today.minusDays(13)
+        val oneWeekAgo = today.minusDays(6)
 
         val transactions = ynabClient
             .getTransactions(configProvider.ynabBudgetId, sinceDate = oneWeekAgo)
@@ -40,7 +40,7 @@ class WiredHandler(
             "resulting in outgoings of £${0 - totalValue}"
         }
 
-        val message = "You have made $numTransactions transactions in the last two weeks, $moneyMessage."
+        val message = "You have made $numTransactions transactions in the last week, $moneyMessage."
 
         val sentMessage = sendMessage(
             configProvider.recipientPhoneNumber,
