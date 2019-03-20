@@ -32,9 +32,15 @@ class WiredHandler(
         val totalValue = transactions
             .mapNotNull { it.amount }
             .sum()
-            .let { "£${it / 1000.0}" }
+            .let { it / 1000.0 }
 
-        val message = "You have made $numTransactions transactions in the last two weeks, to the sum of $totalValue."
+        val moneyMessage = if (totalValue > 0) {
+            "resulting in an income of £$totalValue"
+        } else {
+            "resulting in outgoings of £${0 - totalValue}"
+        }
+
+        val message = "You have made $numTransactions transactions in the last two weeks, $moneyMessage."
 
         sendMessage(
             configProvider.recipientPhoneNumber,
