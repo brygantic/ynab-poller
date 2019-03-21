@@ -1,4 +1,4 @@
-package uk.co.tombryant.ynab.poller
+package uk.co.tombryant.ynab.poller.aws
 
 import java.nio.ByteBuffer
 import java.nio.charset.Charset
@@ -6,6 +6,7 @@ import java.nio.charset.Charset
 import com.amazonaws.util.Base64
 import com.amazonaws.services.kms.AWSKMSClientBuilder
 import com.amazonaws.services.kms.model.DecryptRequest
+import uk.co.tombryant.ynab.poller.ConfigProvider
 
 class AmazonSecureConfigProvider : ConfigProvider {
     override val twilioAccountSsid: String

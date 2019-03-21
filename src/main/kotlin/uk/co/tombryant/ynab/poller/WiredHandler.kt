@@ -5,13 +5,14 @@ import com.amazonaws.services.lambda.runtime.RequestHandler
 import com.twilio.Twilio
 import com.twilio.rest.api.v2010.account.Message
 import com.twilio.type.PhoneNumber
+import uk.co.tombryant.ynab.poller.aws.CloudWatchInputMessage
 import uk.co.tombryant.ynab.poller.ynab.YNABClient
 import java.time.LocalDate
 
 class WiredHandler(
     private val configProvider: ConfigProvider,
     private val ynabClient: YNABClient
-) : RequestHandler<Any, String> {
+) : RequestHandler<CloudWatchInputMessage, String> {
     init {
         Twilio.init(
             configProvider.twilioAccountSsid,
@@ -19,7 +20,7 @@ class WiredHandler(
         )
     }
 
-    override fun handleRequest(input: Any, context: Context?): String {
+    override fun handleRequest(input: CloudWatchInputMessage, context: Context?): String {
         val today = LocalDate.now()
         val oneWeekAgo = today.minusDays(6)
 
