@@ -1,0 +1,1 @@
+CI at: https://travis-ci.com/brygantic/ynab-poller
