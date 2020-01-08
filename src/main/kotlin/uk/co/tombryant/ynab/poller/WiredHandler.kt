@@ -36,9 +36,9 @@ class WiredHandler(
             .let { it / 1000.0 }
 
         val moneyMessage = if (totalValue > 0) {
-            "resulting in an income of £$totalValue"
+            "resulting in an income of ${formatAmount(totalValue)}"
         } else {
-            "resulting in outgoings of £${0 - totalValue}"
+            "resulting in outgoings of ${formatAmount(0 - totalValue)}"
         }
 
         val message = "You have made $numTransactions transactions in the last week, $moneyMessage."
@@ -57,5 +57,9 @@ class WiredHandler(
             PhoneNumber(from),
             message
         ).create()
+    }
+
+    private fun formatAmount(amount: Double): String {
+        return "£" + "%.2f".format(amount)
     }
 }
